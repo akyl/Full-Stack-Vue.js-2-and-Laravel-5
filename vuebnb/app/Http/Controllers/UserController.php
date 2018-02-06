@@ -13,7 +13,7 @@ class UserController extends Controller
         $id = Input::get('id');
         $user = Auth::user();
         $saved = $user->saved;
-        $key = array_search($id, $user);
+        $key = array_search($id, $saved);
         if ($key === FALSE) {
             array_push($saved, $id);
         } else {
